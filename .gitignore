@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.runtime/
+.env
+*.pem
+*.key
+# Raw local reruns can include account metadata; curated evidence is elsewhere.
+results/

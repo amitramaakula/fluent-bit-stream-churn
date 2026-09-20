@@ -1,0 +1,20 @@
+name: Offline evidence checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python scripts/verify-package.py
+      - run: python scripts/unpack-evidence.py
+      - run: python -m unittest discover -s scripts -p 'test_*.py'
+      - run: python scripts/analyze-identity.py lifecycle identity-20260915T020624Z
+      - run: python scripts/analyze-identity.py cloud identity-cloud-20260915T022435Z
+      - run: python scripts/analyze-identity.py cloud identity-cloud-20260916T011221Z
+      - run: python scripts/compare-identity.py identity-cloud-20260916T011221Z
