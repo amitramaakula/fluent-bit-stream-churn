@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "scope": "Curated Apache-2.0 experiment repository; article and CFP excluded",
+  "scope": "Seven-cluster experiment and September archive; article, CFP and private account data excluded",
   "files": [
     {
       "path": ".gitattributes",
@@ -9,8 +9,8 @@
     },
     {
       "path": ".github/workflows/offline-evidence.yml",
-      "bytes": 811,
-      "sha256": "d226947ada6f4b9550cfd622aab4b7853c85cae377cdd58bebd7150f3e2e5741"
+      "bytes": 856,
+      "sha256": "04f708acfd24df2d3f6f635a460aa8116b1b8d3f9a4fe7a294b5f7a671aa9e18"
     },
     {
       "path": ".gitignore",
@@ -29,13 +29,23 @@
     },
     {
       "path": "PROVENANCE.md",
-      "bytes": 2283,
-      "sha256": "8dc71c780c23183169bf7d9bb81ba1eb1e180681ffd768c1561a5678563c9ca7"
+      "bytes": 3772,
+      "sha256": "e202b8000c2e27b3b8ada676b00b37036d67ea26c501d727c0a5e0f0995239b4"
     },
     {
       "path": "README.md",
-      "bytes": 8131,
-      "sha256": "44230231eeac026997badff02577f8b611ae2c9e28f638130218c13eace1ffae"
+      "bytes": 11206,
+      "sha256": "c0f8c83373b64c69d120ca0bd6b02e2a666481a2b2c16146ae0657c90327891a"
+    },
+    {
+      "path": "archive/2026-09/README.md",
+      "bytes": 8453,
+      "sha256": "fa87eae98906f3744c0d047b08de7d9aab3935846dd87e29b9ea2f6f8bc78e05"
+    },
+    {
+      "path": "archive/2026-09/RESULTS.md",
+      "bytes": 7284,
+      "sha256": "c081726b979e33d679d4a3220bacd965b8d2be2edd52d9e4bc3cc6778141fb05"
     },
     {
       "path": "docs/DIAGNOSTICS.md",
@@ -43,9 +53,14 @@
       "sha256": "893997626086640e8f4ad3b45dbe20ffea7de0a1bcedfbd9861e74149aac0822"
     },
     {
+      "path": "docs/FLEET_METHODS.md",
+      "bytes": 5378,
+      "sha256": "0cb5f47f74d81ec591b8e2398ac8d280c10e51d7a6c1d84ca682ad3771116f00"
+    },
+    {
       "path": "docs/RESULTS.md",
-      "bytes": 7278,
-      "sha256": "c3ff0492ed76384355bfb521f8f66de6f0e2be9d6e66d0b61cea45ca73c7178d"
+      "bytes": 435,
+      "sha256": "8ea08c9f956e7ce294896f31302aafbf508293a11ceb6b82c313f53c7d06971a"
     },
     {
       "path": "evidence/identity-20260915T020624Z/application-replacement-collector.json.gz",
@@ -308,6 +323,236 @@
       "sha256": "66730c9b4e24ff9f0b0ff2261a8ebe10118b056fb958b63e98da16663f3b3117"
     },
     {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r1-high-default.json.gz",
+      "bytes": 48635,
+      "sha256": "1d0b7f79e01b994b47f5fef3d0e78329f4f5a59db611e75b0a33d8cb922b789b"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r1-high-unlimited.json.gz",
+      "bytes": 63977,
+      "sha256": "81229ecbd29b74da646b72b3d9a42debef605fa788a6a6c2e9ff456d22a61531"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r1-reused-default.json.gz",
+      "bytes": 47576,
+      "sha256": "bc0148b7e207b956539c7a2bfae31fa46ed4aaadd5e694d95d0726bfe3c155e9"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r2-high-default.json.gz",
+      "bytes": 38648,
+      "sha256": "3ae660978a8d78ffad350397097116f8f3c7d5b683105bcaa01ff9abdc834188"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r2-high-unlimited.json.gz",
+      "bytes": 53926,
+      "sha256": "a904116a911853d4b0c0f6b5f6cb1be9b83b32422b627cea967dce6f4cb4d750"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r2-reused-default.json.gz",
+      "bytes": 48110,
+      "sha256": "0345f840622a252076c7578e30a46d3b8c96987d068d8fa2dda07a32db6edd74"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r3-high-default.json.gz",
+      "bytes": 50878,
+      "sha256": "50a9644afc09c6f7a4c270a787789ab312aabf212b69013bbb8068e1dd883f82"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c01--r4-high-default.json.gz",
+      "bytes": 54197,
+      "sha256": "2e8cf7928d4d75dd651e2731d183a961d808d5efb2fa89e2e0d9d1c46742b38c"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r1-high-default.json.gz",
+      "bytes": 51525,
+      "sha256": "4adc5fd2d0c203bc46dbe2e46419ed138dd4d71ea7002aa8ac5b5f23f2287e5d"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r1-high-unlimited.json.gz",
+      "bytes": 50988,
+      "sha256": "3c5faca3df7d4ed4e62716d0d1afcf750c1cb9b80b84b8825cb45955f08a50b9"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r1-reused-default.json.gz",
+      "bytes": 47835,
+      "sha256": "adec924c420fe100efaf21f4fa4509dc1ddd0ee10429b0fce86bd022b093d409"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r2-high-default.json.gz",
+      "bytes": 51117,
+      "sha256": "dceb60545ef75e2a8d39675edd2f95c508d02e0170fe3e4a4eebc728158739fd"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r2-high-unlimited.json.gz",
+      "bytes": 57631,
+      "sha256": "00fa7d384c5e1118f4cd1167cdb1e1b7e2450c3fbf88ce6a71db7c6a52ec57ce"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c02--r2-reused-default.json.gz",
+      "bytes": 48530,
+      "sha256": "3b4e2160756e2368da0b96f2ff74c1e8f3015d33ec5f06d40bb4144645b4db87"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r1-high-default.json.gz",
+      "bytes": 39695,
+      "sha256": "e5d12e64bdef6d28d73ecfbc6597adbc6208112ddba41b51181a2a0a05e7cbdf"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r1-high-unlimited.json.gz",
+      "bytes": 53375,
+      "sha256": "645a875e59a682e28ab7c173d3abd6e742fa8559951d3149eb080b11650823c2"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r1-reused-default.json.gz",
+      "bytes": 50160,
+      "sha256": "558c35d39d303c0830e98b5c0e14083c7c7d20ab8c65bf7ae36d18f51bbd21d5"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r2-high-default.json.gz",
+      "bytes": 38513,
+      "sha256": "f3c0e2f3a1f729c22ba51f8642e7b39fa0ffb52cc11328159ff19af87c64ded0"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r2-high-unlimited.json.gz",
+      "bytes": 52829,
+      "sha256": "fb10924d72a813382d0266956d22bacf2e7ce5e61c2578e0c3757a149427c177"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c03--r2-reused-default.json.gz",
+      "bytes": 50044,
+      "sha256": "de07aee1c4f2ccf5b34c6db33a3f7bb82baee0d592e02c4be59045772552e505"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r1-high-default.json.gz",
+      "bytes": 47697,
+      "sha256": "05a06cde8c7f73223699450c0798f7add33e62d81e7dd57bed339a4eac7e6063"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r1-high-unlimited.json.gz",
+      "bytes": 57443,
+      "sha256": "45478bd4872f5a6a3828414e1a5dd1e4dc8a9031b484e297c96b49fa0f3ef5ec"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r1-reused-default.json.gz",
+      "bytes": 47584,
+      "sha256": "5611bc535b38969ad1d0dcd67c5be0843663fc0e07ccd5980824451fe7d75b09"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r2-high-default.json.gz",
+      "bytes": 50469,
+      "sha256": "6c20a8b9187aa471874f2d736b000adf12acd6e63b3ff6a358c555e34eaecd6d"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r2-high-unlimited.json.gz",
+      "bytes": 51667,
+      "sha256": "c5c104c51f8ffedc25a93402b2dafbfb6c2f21ac358cf2d050f6775172c1fa8a"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c04--r2-reused-default.json.gz",
+      "bytes": 48319,
+      "sha256": "ad570a3477cf26fd8702e7025466353ba57e9755dee4f436a601efe30ea28651"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r1-high-default.json.gz",
+      "bytes": 41872,
+      "sha256": "e6eeb73c077c2e4dbc28cf84ef90355af6e1e989b1524543e31b74d1c80eeddb"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r1-high-unlimited.json.gz",
+      "bytes": 58829,
+      "sha256": "efd4b14bedf25fffcba09aabc53de02475817e473afd1080c96cb7edaa64c7cf"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r1-reused-default.json.gz",
+      "bytes": 45812,
+      "sha256": "2db87c2ed55db7124227a46861876e9a37277bff87e9d14a8601ff9af1a043b2"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r2-high-default.json.gz",
+      "bytes": 36995,
+      "sha256": "99b88df2ea4357fefa929bcbc99345abb12f71507c50e239af5164cb131b4ba4"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r2-high-unlimited.json.gz",
+      "bytes": 63455,
+      "sha256": "de6cd7b10571198866c990e5bac4aaa844571fffeb326476cc4f8b0a94178ff8"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c05--r2-reused-default.json.gz",
+      "bytes": 46590,
+      "sha256": "aa8f07552dc558813b68b966ce6ebc4b2aab5f295737d33d613da14b4e339aa4"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r1-high-default.json.gz",
+      "bytes": 50116,
+      "sha256": "11cee65fef9feb6c9c7ce85e4882f38ef78317802fb6c9ded30bea573a8c288e"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r1-high-unlimited.json.gz",
+      "bytes": 57920,
+      "sha256": "5fa1b3bd3f5f273e9c57a9ede592320fa6d0eb034aee74348ac95c4487c611ab"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r1-reused-default.json.gz",
+      "bytes": 48869,
+      "sha256": "1f9adbecb1520ad76f52055613b137bb4adf2e1dd89e604d2016ac8e79ef7421"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r2-high-default.json.gz",
+      "bytes": 49469,
+      "sha256": "edfb05c1c1a719c900361efdf19d762eff93909f1b4349f12780bdc9486c14db"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r2-high-unlimited.json.gz",
+      "bytes": 55736,
+      "sha256": "48ba225d2d3de1b2a82d56a85c9ed240360b4c65ffd77ef36f7858ac9602fba9"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c06--r2-reused-default.json.gz",
+      "bytes": 49417,
+      "sha256": "068366584a2dd7effcf0e37f002fbe50cca9e77a311ed694cb595860922d700d"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r1-high-default.json.gz",
+      "bytes": 47114,
+      "sha256": "1f4a988629d46a5168213926bb0ace6516a10b2752b7859de5fc205eac3d7e65"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r1-high-unlimited.json.gz",
+      "bytes": 55639,
+      "sha256": "a2da50ff0198c9b9c3e3ddf574a6927eb3b0665f2bd859dbd0b9f493526b2424"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r1-reused-default.json.gz",
+      "bytes": 45710,
+      "sha256": "e69c1b4037d24df67609330c70cdd891df8b9b5c18469af83c742c838ed7790e"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r2-high-default.json.gz",
+      "bytes": 34531,
+      "sha256": "f959dbfc3f1400d6837d42b2ffdc741e42f21d5ed327116d6dc8c63c25dddbb0"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r2-high-unlimited.json.gz",
+      "bytes": 51516,
+      "sha256": "f3ad86576c90f22faee674f660142fab8295efc64f47e4b3b959d8ef491f66b4"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/c07--r2-reused-default.json.gz",
+      "bytes": 46273,
+      "sha256": "74dd16f7c380b52703a19eed2d3b453044acd55465efefcc95f717223bcf8b68"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/index.json.gz",
+      "bytes": 716,
+      "sha256": "f1e619cbb74436f12dccded04b42cb93c6aee654d3aa318287e0f79c5800effc"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/provenance.json.gz",
+      "bytes": 16552,
+      "sha256": "eae400f388f0bc41494c05d21532854e0731adeae26ed5f8b10384ebbb3689a6"
+    },
+    {
       "path": "evidence/provenance.json",
       "bytes": 18958,
       "sha256": "e624fb700df6f385f6b2f84e090820410f73b2ecce73eed264eb241f27651f9c"
@@ -378,6 +623,26 @@
       "sha256": "68a1d4145364ffe5ba7d8e395fed17d9237d7b21eee915e36251c09f7bd6e37a"
     },
     {
+      "path": "examples/fleet/README.md",
+      "bytes": 1730,
+      "sha256": "fcfa29984cd363f1e1f7e9e4956863bb02e88e2686e2184c4473c996181826fe"
+    },
+    {
+      "path": "examples/fleet/high-default.conf",
+      "bytes": 967,
+      "sha256": "7218685d34b760f8463d8217936fceecb99125335f0e5c3ea7b941b9dcfe7454"
+    },
+    {
+      "path": "examples/fleet/high-unlimited.conf",
+      "bytes": 989,
+      "sha256": "bde80ce6cfbfd18b50a7c04a695beb0f7fb663a434bf13cbb5b29b37271c5e60"
+    },
+    {
+      "path": "examples/fleet/reused-default.conf",
+      "bytes": 884,
+      "sha256": "699cb1f2fcd613524d97354dc9bafe9358dc52461f462dfa893a6106918cee68"
+    },
+    {
       "path": "examples/isolated-changing.conf",
       "bytes": 555,
       "sha256": "c302e1280cc86e9dcfca5886da31e1be5cd58a58082b39560f53f507399ccd07"
@@ -413,6 +678,36 @@
       "sha256": "4f5f16730d5998c53d50b142410c9f6a634d9c5df70e73a44ec5cbe5c1aedd17"
     },
     {
+      "path": "figures/fleet-focal-drops.png",
+      "bytes": 80974,
+      "sha256": "5d3dfb09789efc9d23c4880669ba2ca2efce0ec918747522e75b59a6d48dade5"
+    },
+    {
+      "path": "figures/fleet-focal-drops.svg",
+      "bytes": 60043,
+      "sha256": "8017a146a25f66f3bc6ec6ce574938b3033a1090c241e74321d6d97ec595e2e6"
+    },
+    {
+      "path": "figures/fleet-output-records.png",
+      "bytes": 118906,
+      "sha256": "d3858697529088ff89c06ff9475c2b62c78d4ceff6eff7d6dd5464b153deec91"
+    },
+    {
+      "path": "figures/fleet-output-records.svg",
+      "bytes": 74535,
+      "sha256": "caa650bfcaf36f103f9f7c9e0d241dd32f5e2363c734d86b17d330019051a805"
+    },
+    {
+      "path": "figures/fleet-retries-errors.png",
+      "bytes": 227484,
+      "sha256": "48c182e71f04c8d3609025737df48a9d1205cfe873099b7c9942d35a9ac83be7"
+    },
+    {
+      "path": "figures/fleet-retries-errors.svg",
+      "bytes": 123687,
+      "sha256": "56ad7b35af04478651213c7fe0ae8a4c2c2f4efdb17ceb12b0485d5adef7da8d"
+    },
+    {
       "path": "figures/identity-matrix.png",
       "bytes": 88164,
       "sha256": "17fedd6df8ad37664ae09020b4d1e28f09f00d85452132e296c7edf9d6aca4e7"
@@ -446,6 +741,11 @@
       "path": "requirements.txt",
       "bytes": 120,
       "sha256": "7d43f3bff98f45f76272bd86aab6500b211053e01408116fa629d926b83169e9"
+    },
+    {
+      "path": "scripts/analyze-fleet.py",
+      "bytes": 11575,
+      "sha256": "ac76b66cde395d8971f2ffc1ca6ba4c11ae48fbdee2788d3b723314b95b09223"
     },
     {
       "path": "scripts/analyze-identity.py",
@@ -491,6 +791,11 @@
       "path": "scripts/test_cloud_audit.py",
       "bytes": 3300,
       "sha256": "86fd35a41bb0e569c3afd017e9376adefd345ff26c288cd3de003808f2169bdc"
+    },
+    {
+      "path": "scripts/test_fleet.py",
+      "bytes": 1479,
+      "sha256": "d58568461e57b03fbaa959135673cae258c7fb53210c137e63794fbe754dde59"
     },
     {
       "path": "scripts/test_identity.py",

@@ -1,5 +1,15 @@
 # Evidence and release provenance
 
+## October 2026 fleet experiment
+
+The main README describes Fluent Bit 5.1.3 on seven real EKS 1.36 clusters. Compressed evidence is stored under `evidence/kubecon-fleet-20261011-0201`. Each of the 44 trial exports contains raw Prometheus-format responses, the pre-probe terminal response, synthetic source records, selected backend record fields, health responses and stream-creation/write throttling log lines. The 800-record pilot and capacity-ramp samples are excluded from this set.
+
+`provenance.json.gz` in that folder records original source-file hashes. Exported backend fields are restricted to the synthetic record, stream name and ingestion timestamp. Account inventory, infrastructure addresses, service event IDs, billing and credentials are excluded. The configurations under `examples/fleet` were extracted from effective submitted ConfigMaps; the private group prefix and probe Pod name were replaced with environment variables. Source records and counter values were not changed. The sealed internal archive was not modified.
+
+`scripts/analyze-fleet.py` reconstructs all six fleet totals and two c01 baselines from the public data. Its checks include counter monotonicity, the optional Prometheus timestamp column, source/backend content and ID matches, destination selection, recovery-probe separation and trial order. The three current figures use native Fluent Bit counters only. The production of those figures does not require AWS access.
+
+## September 2026 archive
+
 The code and data come from a controlled research project using synthetic records, local Kind, Fluent Bit 5.1.2, and real CloudWatch Logs. Captured application/collector names, Pod UIDs, container IDs, record timestamps and delivery IDs are retained because they establish event transitions and exact delivery. They describe disposable synthetic workloads.
 
 `evidence/provenance.json` records the SHA-256 of each internal source file and exported text. Account identifiers are replaced by `000000000000`, machine-specific home paths are generalized, and caller-identity/QuotaArn fields are omitted from exported cloud preflight records. Values used in statistical comparisons are preserved. Gzip compression is deterministic. The internal originals remain unchanged.
