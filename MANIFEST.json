@@ -9,8 +9,8 @@
     },
     {
       "path": ".github/workflows/offline-evidence.yml",
-      "bytes": 856,
-      "sha256": "04f708acfd24df2d3f6f635a460aa8116b1b8d3f9a4fe7a294b5f7a671aa9e18"
+      "bytes": 905,
+      "sha256": "c2c900c51fcfeb390784bab0829a47904b0f014fd80d1a02ec0cf262529ccbf1"
     },
     {
       "path": ".gitignore",
@@ -29,13 +29,13 @@
     },
     {
       "path": "PROVENANCE.md",
-      "bytes": 3772,
-      "sha256": "e202b8000c2e27b3b8ada676b00b37036d67ea26c501d727c0a5e0f0995239b4"
+      "bytes": 4297,
+      "sha256": "f8424d7d92d0261366e72537e13378d460f1077ff915a609f8f3155ef08c37b0"
     },
     {
       "path": "README.md",
-      "bytes": 11093,
-      "sha256": "8240596094ff4b670f58ac480ec19f02b7e94d8da512edb3bc92a123566b6429"
+      "bytes": 12294,
+      "sha256": "afbcf05b2ed207409fd27acd3a6d3a601062d6977c2136f4080112808ad9752f"
     },
     {
       "path": "archive/2026-09/README.md",
@@ -54,8 +54,8 @@
     },
     {
       "path": "docs/FLEET_METHODS.md",
-      "bytes": 5378,
-      "sha256": "0cb5f47f74d81ec591b8e2398ac8d280c10e51d7a6c1d84ca682ad3771116f00"
+      "bytes": 7827,
+      "sha256": "9f4bd0f347a4572855c341cb5826f34f0ea072339d801a6bb29a72d244ee8a03"
     },
     {
       "path": "docs/RESULTS.md",
@@ -321,6 +321,16 @@
       "path": "evidence/identity-cloud-20260916T011221Z/stages.json.gz",
       "bytes": 316,
       "sha256": "66730c9b4e24ff9f0b0ff2261a8ebe10118b056fb958b63e98da16663f3b3117"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/aws-api-metrics.json.gz",
+      "bytes": 1071,
+      "sha256": "ea7455e5801f5c88e29912c2958347cbcfbb4d6fb414935e94037af34dbfe6ce"
+    },
+    {
+      "path": "evidence/kubecon-fleet-20261011-0201/aws-api-provenance.json.gz",
+      "bytes": 533,
+      "sha256": "075ce039cf913f1e05795bcfa8960070b75cad947cd8c8183a8fe6aa5395797a"
     },
     {
       "path": "evidence/kubecon-fleet-20261011-0201/c01--r1-high-default.json.gz",
@@ -678,6 +688,26 @@
       "sha256": "4f5f16730d5998c53d50b142410c9f6a634d9c5df70e73a44ec5cbe5c1aedd17"
     },
     {
+      "path": "figures/fleet-api-calls.png",
+      "bytes": 185469,
+      "sha256": "60bde6e1a6cbd588feb041e29051e5a7cb0d79213377b70255afd2d1fb64bd2c"
+    },
+    {
+      "path": "figures/fleet-api-calls.svg",
+      "bytes": 125182,
+      "sha256": "19411475c17dbda439389525354ce0bbe8cb700129185947c4a79089ab4f6cba"
+    },
+    {
+      "path": "figures/fleet-api-throttles.png",
+      "bytes": 187071,
+      "sha256": "34ed63dd2bc0a9b32676433ded657c5d2da66030782dd75f4895f72ac56db8a1"
+    },
+    {
+      "path": "figures/fleet-api-throttles.svg",
+      "bytes": 112497,
+      "sha256": "3f7de58d7363c20286e8c3fc4ca4c1c9bc48a6671f190f27068ea12308c80dcc"
+    },
+    {
       "path": "figures/fleet-focal-drops.png",
       "bytes": 80974,
       "sha256": "5d3dfb09789efc9d23c4880669ba2ca2efce0ec918747522e75b59a6d48dade5"
@@ -743,6 +773,11 @@
       "sha256": "7d43f3bff98f45f76272bd86aab6500b211053e01408116fa629d926b83169e9"
     },
     {
+      "path": "scripts/analyze-fleet-api.py",
+      "bytes": 11154,
+      "sha256": "4066eba2fd434da7f82a4e3e0b8c5a599a0c9fd70f55e6054946f154166d5b38"
+    },
+    {
       "path": "scripts/analyze-fleet.py",
       "bytes": 11575,
       "sha256": "ac76b66cde395d8971f2ffc1ca6ba4c11ae48fbdee2788d3b723314b95b09223"
@@ -761,6 +796,11 @@
       "path": "scripts/compare-identity.py",
       "bytes": 2864,
       "sha256": "bef2199b28fafbb31bd262c0b5cc5ddad40f968afda3d9f7cfeefa3cb05245cf"
+    },
+    {
+      "path": "scripts/fetch-fleet-api-metrics.py",
+      "bytes": 2693,
+      "sha256": "4a249b89ed74d6f0c7313d419971335b2bb079af593296e090499dee1b53b837"
     },
     {
       "path": "scripts/identity-cloud-metrics.py",
@@ -796,6 +836,11 @@
       "path": "scripts/test_fleet.py",
       "bytes": 1479,
       "sha256": "d58568461e57b03fbaa959135673cae258c7fb53210c137e63794fbe754dde59"
+    },
+    {
+      "path": "scripts/test_fleet_api.py",
+      "bytes": 3464,
+      "sha256": "625742296d55b68bbc620a60ba018e929184655d11dc3e7bbe74ce22e25aba92"
     },
     {
       "path": "scripts/test_identity.py",

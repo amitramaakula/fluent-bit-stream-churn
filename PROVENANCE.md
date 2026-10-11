@@ -6,7 +6,9 @@ The main README describes Fluent Bit 5.1.3 on seven real EKS 1.36 clusters. Comp
 
 `provenance.json.gz` in that folder records original source-file hashes. Exported backend fields are restricted to the synthetic record, stream name and ingestion timestamp. Account inventory, infrastructure addresses, service event IDs, billing and credentials are excluded. The configurations under `examples/fleet` were extracted from effective submitted ConfigMaps; the private group prefix and probe Pod name were replaced with environment variables. Source records and counter values were not changed. The sealed internal archive was not modified.
 
-`scripts/analyze-fleet.py` reconstructs all six fleet totals and two c01 baselines from the public data. Its checks include counter monotonicity, the optional Prometheus timestamp column, source/backend content and ID matches, destination selection, recovery-probe separation and trial order. The three current figures use native Fluent Bit counters only. The production of those figures does not require AWS access.
+`scripts/analyze-fleet.py` reconstructs all six fleet totals and two c01 baselines from the public data. Its checks include counter monotonicity, the optional Prometheus timestamp column, source/backend content and ID matches, destination selection, recovery-probe separation and trial order. Three figures use native Fluent Bit counters.
+
+Two additional figures are produced by `scripts/analyze-fleet-api.py` from `aws-api-metrics.json.gz`. The saved `AWS/Logs` response covers 03:00–03:50 UTC on 11 October and was retrieved at 21:17:41 UTC that day. `CallCount` and `ThrottleCount` values, timestamps, units, query dimensions and empty series were retained. Account identifiers and response metadata were excluded. The separate `aws-api-provenance.json.gz` records the uncompressed source hash and query details. This refresh did not change the sealed original experiment evidence. All five figures can be reproduced without AWS access.
 
 ## September 2026 archive
 

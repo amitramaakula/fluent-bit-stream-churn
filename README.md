@@ -127,9 +127,19 @@ The figures were generated from saved Fluent Bit metrics. Each bar shows a cumul
 
 Of the 832 records read by c01 in each trial, 0 and 2 were discarded when it was tested alone, versus 64 and 248 when the other six collectors were active. Cluster count, collector count and stream-creation demand were increased together. The effect of cluster count alone was not tested.
 
-### API and health checks
+### CloudWatch API metrics
 
-`CreateLogStream` throttling responses were found in the Pod/container trials. No `PutLogEvents` throttling responses were found in the saved collector logs. API responses were checked in these logs separately from the Fluent Bit counters.
+The [CloudWatch Logs service metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Monitoring-CloudWatch-Metrics.html) were retrieved after the experiment. `CallCount` and `ThrottleCount` from `AWS/Logs` are shown below as one-minute sums. The window covers both solo baselines and all six fleet trials. Trial windows are marked from scheduled activation to the last pre-probe metric sample; recovery probes and other account activity are also included in the API totals.
+
+![CloudWatch API call counts per minute with the eight comparison windows marked](figures/fleet-api-calls.png)
+
+Returned samples contained 17,340 `CreateLogStream` calls and 19,356 `PutLogEvents` calls over the 50-minute query window. The counts are aggregated by account and region. A minute can cross a trial boundary, so these samples were not assigned exact per-trial totals.
+
+![CreateLogStream throttling per minute; no PutLogEvents ThrottleCount samples were returned](figures/fleet-api-throttles.png)
+
+The returned `CreateLogStream` samples contained 5,654 throttled requests. No `PutLogEvents` `ThrottleCount` samples were returned. Missing samples are shown as gaps, not zeros. Stream-creation throttling responses were also found in the saved collector logs; no `PutLogEvents` throttling responses were found there. Those log entries were counted separately from the AWS metrics and Fluent Bit retry counters.
+
+### Health checks
 
 Failures were reported by the enabled `/api/v1/health` endpoint during both fleet default-retry trials. Successful health responses were recorded throughout the unlimited-retry trials, even while some records were delayed by more than eight minutes. Only successful health responses were recorded in the final solo trial, in which two records were discarded. The root endpoint returned success in every captured response.
 

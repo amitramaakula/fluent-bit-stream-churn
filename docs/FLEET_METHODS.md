@@ -13,9 +13,10 @@ python -m pip install -r requirements.txt
 python scripts/verify-package.py
 python -m unittest discover -s scripts -p 'test_*.py'
 python scripts/analyze-fleet.py
+python scripts/analyze-fleet-api.py
 ```
 
-An audit report and three PNG/SVG figure pairs are written under `results/kubecon-fleet-20261011-0201`. The compressed public evidence is read directly. The unpack script is only required by the archived September analyses.
+Audit reports and five PNG/SVG figure pairs are written under `results/kubecon-fleet-20261011-0201`: three for Fluent Bit counters and two for AWS API metrics. The compressed public evidence is read directly. The unpack script is only required by the archived September analyses.
 
 The analysis fails if a required metric is missing, a counter falls, records are duplicated or altered, a stream name is incorrect, or the input/output/drop accounting disagrees with source and backend IDs. All 44 per-cluster comparisons are checked. The six synchronized fleet timestamps and reversed trial order are also checked.
 
@@ -35,6 +36,27 @@ Fresh collector processes, tail databases, memory buffers and output caches were
 | `fluentbit_output_errors_total` | Output error events; retry exhaustion was reported through the separate counters in this run |
 
 The retry counters cannot be used as CloudWatch API-call counts. Multiple records can be held in a chunk, and API activity can occur within an output attempt. Metric definitions are also available in Fluent Bit's [monitoring documentation](https://docs.fluentbit.io/manual/administration/monitoring).
+
+## AWS API metric interpretation
+
+`aws-api-metrics.json.gz` contains a later read of the original experiment window, from 03:00 to 03:50 UTC on 11 October 2026. It was retrieved at 21:17:41 UTC that day. `GetMetricStatistics` was used with the `AWS/Logs` namespace, `Sum`, a 60-second period, and these dimensions:
+
+| Dimension | Value |
+|---|---|
+| `Service` | `Logs` |
+| `Class` | `None` |
+| `Type` | `API` |
+| `Resource` | `CreateLogStream` or `PutLogEvents` |
+
+`CallCount` is also available in `AWS/Usage`; overlapping counts from that namespace were not added. See the [AWS metric definitions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Monitoring-CloudWatch-Metrics.html).
+
+Each bar covers the minute beginning at its returned timestamp. An absent minute remains missing, and an empty series is not converted to zeros. No `PutLogEvents` throttling datapoints were returned. The validator rejects duplicate minutes, unexpected dimensions or namespaces, unaligned timestamps, and missing series definitions. Trial timing is reconstructed from the same 44 public exports used by the Fluent Bit analysis.
+
+API metrics are account/region totals. Recovery probes and any concurrent account activity are included. Trial bands end at the last collector's pre-probe terminal sample. A one-minute bin can overlap a trial boundary, and exact per-trial API totals cannot be established from these bins. The plotted sums are sums of returned samples, not estimates for missing minutes. Per-second quota utilization cannot be inferred from these one-minute totals.
+
+The saved collector logs contain 5,653 `CreateLogStream` throttling-response lines across the six fleet trials and two solo baselines. The AWS metric samples sum to 5,654. The source of that one-count difference was not established. Neither count was changed to force agreement. No `PutLogEvents` throttling-response lines were found in these trial logs.
+
+The read-only fetch helper is retained in `scripts/fetch-fleet-api-metrics.py`. It requests the fixed experiment window and needs AWS credentials with metric-read access and `boto3`. The offline plots use the saved response and do not require credentials. Source hashes, retrieval time and selected response fields are recorded in `aws-api-provenance.json.gz`; account IDs and response request IDs are excluded.
 
 ## Record and health checks
 

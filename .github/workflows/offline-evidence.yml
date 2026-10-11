@@ -15,6 +15,7 @@ jobs:
       - run: python scripts/unpack-evidence.py
       - run: python -m unittest discover -s scripts -p 'test_*.py'
       - run: python scripts/analyze-fleet.py
+      - run: python scripts/analyze-fleet-api.py
       - run: python scripts/analyze-identity.py lifecycle identity-20260915T020624Z
       - run: python scripts/analyze-identity.py cloud identity-cloud-20260915T022435Z
       - run: python scripts/analyze-identity.py cloud identity-cloud-20260916T011221Z
