@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11206,
-      "sha256": "c0f8c83373b64c69d120ca0bd6b02e2a666481a2b2c16146ae0657c90327891a"
+      "bytes": 11093,
+      "sha256": "8240596094ff4b670f58ac480ec19f02b7e94d8da512edb3bc92a123566b6429"
     },
     {
       "path": "archive/2026-09/README.md",
@@ -619,13 +619,13 @@
     },
     {
       "path": "examples/README.md",
-      "bytes": 1246,
-      "sha256": "68a1d4145364ffe5ba7d8e395fed17d9237d7b21eee915e36251c09f7bd6e37a"
+      "bytes": 1492,
+      "sha256": "8ed8dc92521fa2f28237b1c028ef5a0257a8ae80af6ab2f974efa7d417cb8a70"
     },
     {
       "path": "examples/fleet/README.md",
-      "bytes": 1730,
-      "sha256": "fcfa29984cd363f1e1f7e9e4956863bb02e88e2686e2184c4473c996181826fe"
+      "bytes": 1762,
+      "sha256": "7968989974b6dab3751aea72570be1da560b1854f2c5b26b4f925de5cc9e7b90"
     },
     {
       "path": "examples/fleet/high-default.conf",

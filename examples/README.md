@@ -1,7 +1,9 @@
-# Choosing destination identity
+# Stream-naming examples
 
-`pod-named.conf`, `reused-streams.conf`, and `partition.lua` come from the real Deployment-rollout follow-up. They expect the runner's tail path, Kubernetes enrichment, Lua mount and an existing group. Set `AWS_REGION` and `CW_LOG_GROUP`; use one desired output. The demo Lua filter drops records without Kubernetes metadata so missing enrichment fails the record audit. Define a production fallback instead of copying that policy blindly.
+The configurations for the seven-cluster experiment are in [fleet](fleet/README.md). The other files in this directory were used in the [earlier experiments](../archive/2026-09/README.md).
 
-The identity experiment additionally compares collector-plus-file names. Its cloud control consumes synthetic records with precomputed `high_stream` and `reused_stream` fields. `isolated-changing.conf` and `isolated-reused.conf` show the exact deployed configuration shape, with the group replaced by `${CW_LOG_GROUP}`. They are HTTP-input benchmark configurations, not production tail-input recommendations.
+`pod-named.conf`, `reused-streams.conf` and `partition.lua` were used in the Deployment-rollout experiment. The runner's tail path, Kubernetes metadata filter, Lua mount and an existing log group are required. `AWS_REGION` and `CW_LOG_GROUP` must be set, and one output configuration must be selected. Records without Kubernetes metadata are dropped by the test's Lua filter so that missing metadata is detected in the record audit. A fallback for these records would be needed in production.
 
-Trace filename → input tag → enriched fields → output template. A field can change without affecting the destination if the template does not retain it. Collector-plus-file naming is a deliberate comparison scheme, not an assertion about AWS defaults. A bound of 32 must have a defined scope; 32 per cluster across 100 clusters can still mean 3,200 names.
+Collector-plus-file names were also tested. For that CloudWatch comparison, synthetic records were supplied over HTTP with precomputed `high_stream` and `reused_stream` fields. The deployed configurations are provided in `isolated-changing.conf` and `isolated-reused.conf`, with the log group replaced by `${CW_LOG_GROUP}`. These files were used for the HTTP-input benchmark; node log files are not read by them.
+
+Stream names are determined by the output template. A filename or metadata field can change without creating a new destination if that field is omitted from the template. The collector-plus-file template was chosen for comparison and was not an AWS default. Stream counts must also be scoped: 32 distinct names per cluster across 100 clusters can produce 3,200 names.
